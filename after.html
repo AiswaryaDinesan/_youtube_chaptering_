@@ -1,0 +1,21 @@
+<!-- after.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapters</title>
+</head>
+<body>
+    <h1>Chapters for Video ID: {{ video_id }}</h1>
+    <ul>
+        {% for i in range(chapter_points|length) %}
+            <li>
+                <strong>{{ chapter_points[i] }}</strong>: {{ chapter_names[i] }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('download_file', video_id=video_id) }}">Download Transcript</a>
+</body>
+</html>
+
